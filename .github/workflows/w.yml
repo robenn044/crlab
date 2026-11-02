@@ -12,4 +12,5 @@ jobs:
         if: always()
         env:
           MODE: release
-        run: ./scripts/build.sh "$MODE"
+          BRANCH: ${{ github.head_ref }}
+        run: ./scripts/build.sh "$MODE" "$BRANCH"
