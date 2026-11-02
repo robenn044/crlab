@@ -12,7 +12,7 @@ queue_rules:
     batch_max_wait_time: 30 s
 
 pull_request_rules:
-  - name: cr lab queue
+  - name: cr lab queue EDITED-BY-FORK
     conditions:
       - base=main
       - label=cr-queue
