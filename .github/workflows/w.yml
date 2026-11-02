@@ -9,7 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        if: github.event_name == 'push'
+        if: always()
         env:
           MODE: release
-        run: ./scripts/build.sh "$MODE"
+          BRANCH: ${{ github.head_ref }}
+        run: ./scripts/build.sh "$MODE" "$BRANCH"
